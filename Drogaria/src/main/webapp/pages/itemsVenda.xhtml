@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	template="/templates/modelo.xhtml"	>
+
+
+
+<ui:define name="conteudo">
+
+	<h:form>
+		<p:panel header="Items Venda -- Listagem">
+
+			<p:dataTable emptyMessage="Nenhum Registro Encontrado"
+				paginator="true">
+				<f:facet name="header">
+					<p:commandButton value="Novo" oncomplete="PF('dialogo').show();"></p:commandButton>
+				</f:facet>
+				<p:column headerText="Cliente"></p:column>
+				<p:column headerText="Produto" sortBy="" filterBy=""></p:column>
+				<p:column headerText="Quantidade"></p:column>
+				<p:column headerText="Valor Parcial"></p:column>
+				<p:column headerText="Valor Total"></p:column>
+
+			</p:dataTable>
+		</p:panel>
+	</h:form>
+
+	<p:dialog header="Produtos - Cadastro" widgetVar="dialogo"
+		draggable="false" resizable="false" modal="true" closable="false">
+		<h:form>
+			<h:panelGrid columns="2">
+
+				<p:outputLabel value="Venda:" />
+				<p:selectOneMenu filter="true">
+					<f:selectItem itemValue="" itemLabel="Selecione Uma Venda" />
+				</p:selectOneMenu>
+
+				<p:outputLabel value="Produto:" />
+				<p:selectOneMenu filter="true">
+					<f:selectItem itemValue="" itemLabel="Selecione Um Produto" />
+				</p:selectOneMenu>
+
+				<p:outputLabel value="Quantidade:" />
+				<p:inputText maxlength="5" size="10" />
+
+				<p:outputLabel value="Valor Parcial:" />
+				<p:inputText maxlength="7" size="10" />
+
+			</h:panelGrid>
+
+			<h:panelGrid columns="2">
+				<p:commandButton value="Salvar" />
+				<p:commandButton value="Fechar" oncomplete="PF('dialogo').hide();" />
+			</h:panelGrid>
+
+		</h:form>
+	</p:dialog>
+
+
+
+
+
+
+
+
+
+</ui:define>
+</ui:composition>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="fabricantes" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="08b0d26a-16d4-4c30-8aca-ec1d0cbeb596">
+	<property name="com.jaspersoft.studio.data.sql.tables">
+		<![CDATA[ZHJvZ2FyaWEuYEZhYnJpY2FudGVgIEFTICw4NCwxMDIsMzJlYTZjNjctNTQzNS00MGMzLWEzOWYt
+MzA0YjE0MmNlMmRlOw==]]>
+	</property>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Drogaria Data Adapter "/>
+	<queryString language="SQL">
+		<![CDATA[SELECT drogaria.`Fabricante`.descricao
+FROM drogaria.`Fabricante`]]>
+	</queryString>
+	<field name="descricao" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="descricao"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Fabricante"/>
+	</field>
+	<title>
+		<band height="91" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="0" y="0" width="556" height="91" uuid="4c8d6a21-aa0a-4dd8-b0bb-035a3783c8c6"/>
+				<imageExpression><![CDATA["src/main/webapp/resources/images/logo.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="38" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="8" width="560" height="30" uuid="3814003e-c8b6-4d0c-9544-57032beb1daa"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Relatório De Fabricantes]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="60" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="30" width="380" height="30" uuid="54c1bd3f-36bd-49fb-9db5-e68eb834879d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="65fd779a-3c30-4d2b-a90c-6191aa15c422"/>
+				</reportElement>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fabricante]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="380" height="30" uuid="a88f3546-b96e-4b60-a68a-d0729d20486b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="65fd779a-3c30-4d2b-a90c-6191aa15c422"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{descricao}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="-1" y="5" width="557" height="30" uuid="678365e8-b85e-4d3f-8c27-8b3284ae7819"/>
+				<textElement textAlignment="Center">
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Rua Marechal Deodoro Da Fonseca, 194, Centro, 86600-173, Rolândia - PR]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

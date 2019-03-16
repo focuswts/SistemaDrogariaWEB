@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="estados" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f1380d12-1549-408c-9a59-8cbaf63a57de">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Drogaria Data Adapter "/>
+	<property name="com.jaspersoft.studio.data.sql.tables">
+		<![CDATA[ZHJvZ2FyaWEuYEVzdGFkb2AgQVMgLDYxLDczLDhmOTBjYTFiLWI2MmItNDk0MC1hMjcwLTU2ODMy
+MDdhMjFmMDs=
+]]>
+	</property>
+	<queryString>
+		<![CDATA[SELECT drogaria.`Estado`.nome,
+	drogaria.`Estado`.sigla
+FROM drogaria.`Estado`
+ORDER BY drogaria.`Estado`.nome DESC]]>
+	</queryString>
+	<field name="nome" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nome"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Estado"/>
+	</field>
+	<field name="sigla" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="sigla"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Estado"/>
+	</field>
+	<title>
+		<band height="86" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="0" y="0" width="560" height="86" uuid="de4ff7a4-0d4e-4c2f-80d5-d02fb9bda71d"/>
+				<imageExpression><![CDATA["src/main/webapp/resources/images/logo.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="50" splitType="Stretch">
+			<staticText>
+				<reportElement positionType="FixRelativeToBottom" x="-3" y="10" width="560" height="40" uuid="b4772b12-3d94-43e0-9fa5-9914cec3b50a"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Relatório de Estados]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="60" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="30" width="100" height="30" uuid="53fcb717-b93c-4070-96b8-e5c7100ee55a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a891aac2-f524-424c-a380-3fd32a6ae45b"/>
+				</reportElement>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="30" width="100" height="30" uuid="4bf2141f-7931-4dd8-94d2-c68bb46f2c16">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="dc835610-5f5d-4931-a1ff-dabd71b4b1bb"/>
+				</reportElement>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sigla]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="30" uuid="676ed93d-8c77-4b46-9a21-1e2f6a00d94e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a891aac2-f524-424c-a380-3fd32a6ae45b"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="282" y="0" width="100" height="30" uuid="5df8d327-223e-4ba7-90d6-b07a2bfa5d11">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="dc835610-5f5d-4931-a1ff-dabd71b4b1bb"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{sigla}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="-1" y="10" width="557" height="30" uuid="4d0f6c2b-1a24-4c43-b2b6-6de2052bd807"/>
+				<textElement textAlignment="Center">
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Rua Marechal Deodoro Da Fonseca, 194, Centro, 86600-173, Rolândia - PR]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>
